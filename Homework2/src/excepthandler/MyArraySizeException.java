@@ -1,5 +1,5 @@
 package excepthandler;
 
-public class MyArraySizeException {
+public class MyArraySizeException extends Exception {
 
 }
