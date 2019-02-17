@@ -20,12 +20,10 @@ public class ArrayHandler {
                 for (int j = 0; j < size; j++) {
                     try {
                         sum += Integer.parseInt(array[i][j]);
-                    } catch (MyArrayDataException made) {
-                        return "Element["+ i + "]" + "["+ j +"]" + " is not integer";
+                    } catch (NumberFormatException made) {
                         made.printStackTrace();
+                        return "Element["+ i + "]" + "["+ j +"]" + " is not integer";
                     }
-
-
                 }
             }
         } else {
@@ -70,11 +68,15 @@ public class ArrayHandler {
      * @param string
      * @return
      */
-    private boolean convertStringToInt(String string) throws  MyArrayDataException{
-        int res;
-        if  res = Integer.parseInt(string);
-        return true;
-    }
+    /*private boolean convertStringToInt(String string) throws MyArrayDataException{
+        try {
+            Integer.parseInt(string);
+            return true;
+        } catch(MyArrayDataException made) {
+            made.printStackTrace();
+            return false;
+        }
+    }*/
 
 
 
