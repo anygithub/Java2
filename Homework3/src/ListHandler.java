@@ -2,6 +2,7 @@
  * @author Anna Bondarenko
  * @version 19.02.19
  */
+
 import java.util.*;
 
 
@@ -35,18 +36,42 @@ public class ListHandler {
      * @return
      */
     public Set<String> getListOfUniqueWords(List<String> list) {
-        Set<String> set = new HashSet<>();
-        for (String s:list) {
-           set.add(s);
+        try {
+            if (list.size() == 0) {
+                throw new IllegalArgumentException("Empty list");
+            }
+            Set<String> set = new HashSet<>();
+            for (String s:list) {
+                set.add(s);
+            }
+            return set;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return null;
+        }catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return null;
         }
-        return set;
     }
 
+    /**
+     * Print word and how many times it appears in the list
+     * @param list initial list where search will be ran
+     * @param set list of unique words from the list
+     */
     public void printCountOfUniqueWords(List<String> list, Set<String> set) {
-        for (String s:set) {
-            System.out.println(s + "  " + Collections.frequency(list, s));
+        try {
+            if (list.size() == 0 || set.size() == 0) {
+                throw new IllegalArgumentException("Empty list");
+            }
+            for (String s:set) {
+                System.out.println(s + "  " + Collections.frequency(list, s));
+            }
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
         }
     }
-
 
 }
