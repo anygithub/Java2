@@ -10,9 +10,7 @@ import java.util.Set;
 
 
 public class AppLauncher {
-
-
-
+    
     public static void main(String[] args) {
         runExercise1();
     }
@@ -20,11 +18,10 @@ public class AppLauncher {
     /* Создать массив с набором слов (10-20 слов, должны встречаться повторяющиеся).
        Найти и вывести список уникальных слов, из которых состоит массив (дубликаты не считаем).
        Посчитать сколько раз встречается каждое слово. */
-
     public static void runExercise1() {
         List<String> arrayList = new ArrayList<>();
         ListHandler listHandler = new ListHandler();
-        Set<String> hashSet;//
+        Set<String> hashSet;
 
         //generate list of strings
         listHandler.generateList(arrayList);
