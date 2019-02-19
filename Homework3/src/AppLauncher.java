@@ -42,7 +42,7 @@ public class AppLauncher {
     public static void runExercise2() {
         List<PhoneBookRecord> phoneBook = new ArrayList<>();
         PhoneBookHandler phoneBookHandler = new PhoneBookHandler();
-        String numbers = new String();
+        String numbers;
 
         // generate PhoneBook
         phoneBookHandler.generatePhoneBook(phoneBook);
@@ -54,6 +54,5 @@ public class AppLauncher {
         // get phone numbers by surname
         numbers = phoneBookHandler.get(phoneBook,"Lermontov");
         System.out.println(numbers);
-
     }
 }
