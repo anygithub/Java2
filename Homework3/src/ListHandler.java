@@ -31,11 +31,63 @@ public class ListHandler {
     }
 
     /**
-     * Get list of unique words from the list
+     * Get list of unique words from the list (Using map)
      * @param list
      * @return
      */
-    public Set<String> getListOfUniqueWords(List<String> list) {
+    public Map<String, Integer> getListOfUniqueWords(List<String> list) {
+        int n;
+        try {
+
+            if (list.size() == 0) {
+                throw new IllegalArgumentException("Empty list");
+            }
+            Map<String, Integer> map = new HashMap();
+            for (String s:list) {
+                //set.add(s);
+                if (map.containsKey(s)) {
+                    n = map.get(s);
+                    map.put(s,n+1);
+                } else {
+                    map.put(s,1);
+                }
+            }
+            return map;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return null;
+        }catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Print word and how many times it appears in the list (Using Map)
+     * @param map
+     */
+    public void printCountOfUniqueWords(Map<String, Integer> map) {
+        try {
+            if (map.size() == 0) {
+                throw new IllegalArgumentException("Empty map");
+            }
+            for (String s:map.keySet()) {
+                System.out.println(s + "  " + map.get(s));
+            }
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Get list of unique words from the list (using Set)
+     * @param list
+     * @return
+     */
+    public Set<String> getListOfUniqueWords1(List<String> list) {
         try {
             if (list.size() == 0) {
                 throw new IllegalArgumentException("Empty list");
@@ -55,11 +107,11 @@ public class ListHandler {
     }
 
     /**
-     * Print word and how many times it appears in the list
+     * Print word and how many times it appears in the list (Using Set)
      * @param list initial list where search will be ran
      * @param set list of unique words from the list
      */
-    public void printCountOfUniqueWords(List<String> list, Set<String> set) {
+    public void printCountOfUniqueWords1(List<String> list, Set<String> set) {
         try {
             if (list.size() == 0 || set.size() == 0) {
                 throw new IllegalArgumentException("Empty list");

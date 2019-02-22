@@ -7,6 +7,7 @@ import phonebook.PhoneBookRecord;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class AppLauncher {
@@ -24,18 +25,18 @@ public class AppLauncher {
     public static void runExercise1() {
         List<String> arrayList = new ArrayList<>();
         ListHandler listHandler = new ListHandler();
-        Set<String> hashSet;
+        Map<String, Integer> mapSet;
 
         //generate list of strings
         listHandler.generateList(arrayList);
         System.out.println(arrayList);
 
         //get the list of unique words
-        hashSet = listHandler.getListOfUniqueWords(arrayList);
-        System.out.println(hashSet);
+        mapSet = listHandler.getListOfUniqueWords(arrayList);
+        //System.out.println(mapSet);
 
         // get count for each unique word
-        listHandler.printCountOfUniqueWords(arrayList,hashSet);
+        listHandler.printCountOfUniqueWords(mapSet);
     }
 
     //Exercise2
