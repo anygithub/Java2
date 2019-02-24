@@ -4,6 +4,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * @author Anna Bondarenko
+ * @version 24.02.19
+ */
+
 class Chat extends JFrame implements ActionListener {
 
     final String WINDOW_TITLE = "Chat window";
@@ -21,7 +26,6 @@ class Chat extends JFrame implements ActionListener {
     }
 
     /**
-     * Constructor:
      * Create a window and all the necessary elements on it
      */
     Chat() {
